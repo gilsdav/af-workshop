@@ -1,0 +1,49 @@
+<div class="pizza-form">
+  <form>
+  
+    <label>
+      <h4>Pizza name</h4>
+      <input 
+        type="text" 
+        formControlName="name"
+        placeholder="e.g. Pepperoni"
+        class="pizza-form__input error">
+      <div
+        class="pizza-form__error">
+        <p>Pizza must have a name</p>
+      </div>
+    </label>
+  
+    <ng-content></ng-content>
+
+    <label>
+      <h4>Select toppings</h4>
+    </label>
+    <div class="pizza-form__list">
+
+      <!-- ajouter le composant de toppings ici -->
+
+    </div>
+
+    <div class="pizza-form__actions">
+      <button
+        type="button"
+        class="btn btn__ok">
+        Create Pizza
+      </button>
+
+      <button
+        type="button"
+        class="btn btn__ok">
+        Save changes
+      </button>
+
+      <button
+        type="button"
+        class="btn btn__warning">
+        Delete Pizza
+      </button>
+    </div>
+
+  </form>
+</div>

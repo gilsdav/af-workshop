@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pizza } from '../../models/pizza.model';
 
 @Component({
   selector: 'app-product-item',
@@ -7,9 +8,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-  constructor() { }
+  public pizza: Pizza;
+  public editedPizza: Pizza;
+  public toppings: string[];
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.toppings = [
+      'olive',
+      'bacon'
+    ];
+    this.pizza = <Pizza> {
+      id: 1,
+      name: 'test',
+      toppings: [
+        'olive',
+        'bacon'
+      ]
+    };
+    this.editedPizza = this.pizza;
+  }
+
+  public onEdit(event: Pizza) {
+  }
+
+  public onCreate(event: Pizza) {
+  }
+
+  public onUpdate(event: Pizza) {
+  }
+
+  public onRemove(event: Pizza) {
   }
 
 }
