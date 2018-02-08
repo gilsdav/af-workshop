@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Pizza } from '../../models/pizza.model';
 
 @Component({
   selector: 'app-pizza-form',
   templateUrl: './pizza-form.component.html',
-  styleUrls: ['./pizza-form.component.scss']
+  styleUrls: ['./pizza-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PizzaFormComponent implements OnInit {
 

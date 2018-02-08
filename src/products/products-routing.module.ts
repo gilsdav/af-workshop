@@ -11,10 +11,6 @@ const routes: Routes = [
     {
         path: ':id',
         component: containers.ProductItemComponent,
-    },
-    {
-        path: 'new',
-        component: containers.ProductItemComponent,
     }
 ];
 

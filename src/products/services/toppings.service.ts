@@ -4,16 +4,16 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
+import { of } from 'rxjs/observable/of';
 
-const BASE_URL = 'http://localhost:3000';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ToppingsService {
   constructor(private http: HttpClient) {}
 
   getToppings(): Observable<string[]> {
-    return this.http
-      .get<string[]>(`${BASE_URL}/toppings`)
-      .pipe(catchError((error: any) => Observable.throw(error.json())));
+    // TODO: get list og toppings
+    return of([]);
   }
 }
