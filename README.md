@@ -1,4 +1,4 @@
-# AfWorkshop (Afelio Fundamentals Workshop)
+# AfWorkshop (Angular Fundamentals Workshop)
 
 ![Zozor](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png)
 
