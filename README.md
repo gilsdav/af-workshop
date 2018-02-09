@@ -1,5 +1,7 @@
 # AfWorkshop (Afelio Fundamentals Workshop)
 
+![Zozor](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png)
+
 ## Development server
 
 Exécutez la commande `npm start` pour démarrer les serveurs.
@@ -32,3 +34,5 @@ Rendez-les utilisables et dynamisez-les afin de pouvoir:
 À respecter:
 * Utilisez le système de "***reactive form***" afin de rester immutabile.
 * Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
+
+![Zozor](https://www.letscode.hu/img/letscodelogo190.png)
