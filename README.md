@@ -23,7 +23,7 @@ But du jeu: tous les composants d'un product-item existent (à utiliser pour les
 Rendez-les utilisables et dynamisez-les afin de pouvoir:
 
 1. Prévisualiser les détails d'une pizza
-2. Modifier une modifier
+2. Modifier une pizza
 3. Créer une nouvelle pizza
 4. Supprimer une pizza
 5. Interdir l'accès direct (sans passer par la liste) de la page de détail
