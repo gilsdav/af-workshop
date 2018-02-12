@@ -22,16 +22,58 @@ L'API Rest est disponible à l'adresse `http://localhost:3000/`
 But du jeu: tous les composants d'un product-item existent (à utiliser pour les points 1 à 4). Cela ne veut pas dire qu'ils existent dans le contexte d'Angular.
 Rendez-les utilisables et dynamisez-les afin de pouvoir:
 
-1. Prévisualiser les détails d'une pizza
-2. Modifier une pizza
-3. Créer une nouvelle pizza
-4. Supprimer une pizza
-5. Interdir l'accès direct (sans passer par la liste) de la page de détail
-6. Créer une nouvelle feature appellée `profile` qui ne fait qu'afficher `Bonjour toi !`
-    * Elle doit être chargée en LazyLoading
-    * Elle doit être accessible depuis la bare de navigation (à droite de `Products`).
+### 1. Prévisualiser les détails d'une pizza ###
 
-À respecter:
+Etapes:
+  * Affichage de la pizza mokée
+  * Démokage de l'affichage de la pizza (images)
+  * Ajout d'un formulaire pour l'input name
+  * Gestion des erreurs de l'input
+  * Ajout de la liste des toppings
+  * Calcul de la sélection des toppings et appliquer le style (class active)
+
+### 2. Modifier une pizza ###
+
+Etapes:
+  * Impacter les changements de sélection de toppings sur la pizza
+  * Masquer le bouton "create pizza" dans le contexte d'une mise à jour
+  * Appel service de mise à jour (ne pas oublier de récupérer le nom et de vérifier ça validité)
+  * Redirection vers la page products
+
+### 3. Créer une nouvelle pizza ###
+
+Etapes:
+  * Masquer le bouton "update pizza" et "delete pizza" dans le contexte d'une création
+  * Appel service de création
+  * Redirection vers la page products
+
+### 4. Supprimer une pizza ###
+
+Etapes:
+  * Demande de confirmation (en utilisant la modal de Angular Material)
+  * Appel service de suppression si la réponse est oui
+  * Redirection vers la page products
+
+### 5. Interdir l'accès direct (sans passer par la liste) de la page de détail ###
+
+Etapes:
+  * Création d'un service qui va permettre de stocker l'information (productsAccessed)
+  * Modification de la valeur dans le composant products
+  * Création d'un guard canActivate qui vérifie cette valeur
+
+### 6. Créer une nouvelle feature appellée `profile` qui ne fait qu'afficher `Bonjour toi !` ###
+
+Elle doit:
+  * Être chargée en LazyLoading
+  * Être accessible depuis la bare de navigation (à droite de `Products`).
+
+  Etapes:
+  * Création d'un nouveau module (profile.module)
+  * Création d'un composant container
+  * Créqtion d'un composant d'affichage
+  * Création d'un routing basique
+
+## À respecter ##
 * Utilisez le système de "***reactive form***" afin de rester immutabile.
 * Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
 
