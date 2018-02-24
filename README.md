@@ -17,6 +17,10 @@ L'API Rest est disponible à l'adresse `http://localhost:3000/`
 * Comment gère-t-on la baseUrl du client Rest ?
 * Que voit-on quand on entre une mauvaise URL (exemple: `http://localhost:4200/coucou`) et pourquoi ?
 
+## À respecter ##
+* Utilisez le système de "***reactive form***" afin de rester immutabile.
+* Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
+
 ## Mise en pratique
 
 But du jeu: tous les composants d'un product-item existent (à utiliser pour les points 1 à 4). Cela ne veut pas dire qu'ils existent dans le contexte d'Angular.
@@ -61,20 +65,16 @@ Etapes:
   * Modification de la valeur dans le composant products
   * Création d'un guard canActivate qui vérifie cette valeur
 
-### 6. Créer une nouvelle feature appellée `profile` qui ne fait qu'afficher `Bonjour toi !` ###
+### 6. Créer une nouvelle feature appelée `profile` qui ne fait qu'afficher `Bonjour toi !` ###
 
 Elle doit:
   * Être chargée en LazyLoading
-  * Être accessible depuis la bare de navigation (à droite de `Products`).
+  * Être accessible depuis la barre de navigation (à droite de `Products`).
 
   Etapes:
   * Création d'un nouveau module (profile.module)
   * Création d'un composant container
   * Créqtion d'un composant d'affichage
   * Création d'un routing basique
-
-## À respecter ##
-* Utilisez le système de "***reactive form***" afin de rester immutabile.
-* Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
 
 ![Zozor](https://www.letscode.hu/img/letscodelogo190.png)
