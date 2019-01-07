@@ -18,7 +18,7 @@ L'API Rest est disponible à l'adresse `http://localhost:3000/`
 * Que voit-on quand on entre une mauvaise URL (exemple: `http://localhost:4200/coucou`) et pourquoi ?
 
 ## À respecter ##
-* Utilisez le système de "***reactive form***" afin de rester immutabile.
+* Utilisez le système de "***reactive form***" afin de rester immutable.
 * Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
 
 ## Mise en pratique
