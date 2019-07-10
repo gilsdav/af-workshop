@@ -74,7 +74,7 @@ Elle doit:
   Etapes:
   * Création d'un nouveau module (profile.module)
   * Création d'un composant container
-  * Créqtion d'un composant d'affichage
+  * Création d'un composant d'affichage
   * Création d'un routing basique
 
 ![Zozor](https://www.letscode.hu/img/letscodelogo190.png)
