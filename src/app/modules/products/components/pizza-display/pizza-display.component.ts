@@ -10,7 +10,7 @@ import { Pizza } from '../../models';
 })
 export class PizzaDisplayComponent implements OnInit {
 
-  @Input() pizza?: Pizza;
+  @Input() pizza?: Pizza | null;
 
   constructor() { }
 

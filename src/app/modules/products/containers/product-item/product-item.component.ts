@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, merge, Observable, of, skip } from 'rxjs';
 import { Pizza } from '../../models';
 
 @Component({
@@ -12,6 +12,7 @@ export class ProductItemComponent {
 
   public pizza$: Observable<Pizza>;
   public editedPizza$ = new BehaviorSubject<Pizza | null>(null);
+  public currentPizzaState$: Observable<Pizza | null>;
   public toppings$: Observable<string[]>;
 
   constructor() {
@@ -27,6 +28,10 @@ export class ProductItemComponent {
           'bacon'
         ]
       });
+      this.currentPizzaState$ = merge(
+        this.pizza$,
+        this.editedPizza$.pipe(skip(1))
+      );
   }
 
   public onEdit(event: Pizza) {

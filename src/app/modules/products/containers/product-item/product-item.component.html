@@ -9,7 +9,7 @@
     (update)="onUpdate($event)"
     (remove)="onRemove($event)">
     <app-pizza-display
-      [pizza]="editedPizza$ | async">
+      [pizza]="currentPizzaState$ | async">
     </app-pizza-display>
   </app-pizza-form> -->
 </div>

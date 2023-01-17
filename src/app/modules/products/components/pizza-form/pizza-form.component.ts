@@ -12,9 +12,9 @@ export class PizzaFormComponent implements OnInit {
   public exists = false;
 
   @Input()
-  public pizza?: Pizza;
+  public pizza?: Pizza | null;
   @Input()
-  public toppings?: string[];
+  public toppings?: string[] | null;
 
   @Output()
   private edit = new EventEmitter<Pizza>();
