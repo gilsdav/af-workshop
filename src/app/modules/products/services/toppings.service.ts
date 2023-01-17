@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class ToppingsService {
   constructor(private http: HttpClient) {}
 
   getToppings(): Observable<string[]> {
-    // TODO: get list og toppings
-    return of([]);
+    return this.http
+      .get<string[]>(`${environment.baseUrl}/toppings`)
+      .pipe(catchError((error: HttpErrorResponse) => throwError(error.error)));
   }
 }

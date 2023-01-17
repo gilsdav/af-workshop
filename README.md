@@ -35,17 +35,16 @@ Rendez-les utilisables et dynamisez-les afin de pouvoir:
 ### 1. Prévisualiser les détails d'une pizza ###
 
 Etapes:
-  * Affichage de la pizza mokée
-  * Démokage de l'affichage de la pizza (images)
-  * Ajout d'un formulaire pour l'input name
+  * Affichage du formulaire de la pizza mockée
+  * Affichage du nom de la pizza en utilisant un formulaire
   * Gestion des erreurs de l'input
-  * Ajout de la liste des toppings
+  * Ajout de la liste des toppings ainsi que sa gestion dans le formulaire
   * Calcul de la sélection des toppings et appliquer le style (class active)
 
 ### 2. Modifier une pizza ###
 
 Etapes:
-  * Impacter les changements de sélection de toppings sur la pizza
+  * Impacter les changements de sélection de toppings sur la pizza (synchronisation entre l'affichage de la pizza et son état dans la liste des toppings)
   * Masquer le bouton "create pizza" dans le contexte d'une mise à jour
   * Appel service de mise à jour (ne pas oublier de récupérer le nom et de vérifier ça validité)
   * Redirection vers la page products

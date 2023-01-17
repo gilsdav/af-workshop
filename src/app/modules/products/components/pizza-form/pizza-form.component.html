@@ -1,49 +1,42 @@
 <div class="pizza-form">
-  <form>
-  
-    <label>
-      <h4>Pizza name</h4>
-      <input 
-        type="text" 
-        formControlName="name"
-        placeholder="e.g. Pepperoni"
-        class="pizza-form__input error">
-      <div
-        class="pizza-form__error">
-        <p>Pizza must have a name</p>
-      </div>
-    </label>
-  
-    <ng-content></ng-content>
+    <form [formGroup]="form">
 
-    <label>
-      <h4>Select toppings</h4>
-    </label>
-    <div class="pizza-form__list">
+        <label>
+            <h4>Pizza name</h4>
+            <input type="text" formControlName="name" placeholder="e.g. Pepperoni" class="pizza-form__input"
+                [ngClass]="{ 'error': form.controls['name'].errors }">
+            <div class="pizza-form__error" *ngIf="form.controls['name'].errors?.['required']">
+                <p>Pizza must have a name</p>
+            </div>
+        </label>
 
-      <!-- ajouter le composant de toppings ici -->
+        <ng-content></ng-content>
 
-    </div>
+        <label>
+            <h4>Select toppings</h4>
+        </label>
+        <div class="pizza-form__list">
 
-    <div class="pizza-form__actions">
-      <button
-        type="button"
-        class="btn btn__ok">
-        Create Pizza
-      </button>
+            <app-pizza-toppings [allToppings]="toppings ?? []" formControlName="toppings">
+            </app-pizza-toppings>
 
-      <button
-        type="button"
-        class="btn btn__ok">
-        Save changes
-      </button>
+        </div>
 
-      <button
-        type="button"
-        class="btn btn__warning">
-        Delete Pizza
-      </button>
-    </div>
+        <div class="pizza-form__actions">
+            <button type="button" class="btn btn__ok" *ngIf="!pizza?.id" (click)="createPizza()">
+                Create Pizza
+            </button>
 
-  </form>
+            <ng-container *ngIf="pizza?.id">
+                <button type="button" class="btn btn__ok" (click)="updatePizza()">
+                    Save changes
+                </button>
+
+                <button type="button" class="btn btn__warning" (click)="deletePizza()">
+                    Delete Pizza
+                </button>
+            </ng-container>
+        </div>
+
+    </form>
 </div>

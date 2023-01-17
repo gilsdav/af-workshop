@@ -1,12 +1,7 @@
-<div class="pizza-toppings">
-  <div
-    class="pizza-toppings-item">
-    <img src="assets/img/toppings/singles/olive.svg">
-    olive
-  </div>
-  <div
-    class="pizza-toppings-item active">
-    <img src="assets/img/toppings/singles/bacon.svg">
-    bacon
-  </div>
+<div class="pizza-toppings" *ngIf="selectedToppings$ | async as selectedToppings">
+    <button class="pizza-toppings-item" [ngClass]="{ 'active': selectedToppings[topping] }"
+        *ngFor="let topping of allToppings" (click)="toggleItem(topping)">
+        <img [src]="'assets/img/toppings/singles/' + topping + '.svg'">
+        {{ topping }}
+    </button>
 </div>

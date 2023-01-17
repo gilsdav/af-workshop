@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Pizza } from '../../models/pizza.model';
-import { PizzasService } from '../../services';
+import { PizzasService, AccessService } from '../../services';
 
 @Component({
     selector: 'app-products',
@@ -10,12 +10,16 @@ import { PizzasService } from '../../services';
     styleUrls: ['./products.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
 
     public pizzas$: Observable<Pizza[]>;
 
-    constructor(private pizzasService: PizzasService) {
+    constructor(private pizzasService: PizzasService, private accessService: AccessService) {
         this.pizzas$ = this.pizzasService.getPizzas();
+    }
+
+    ngOnInit(): void {
+        this.accessService.canAccess = true;
     }
 
 }

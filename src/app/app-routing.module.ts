@@ -6,6 +6,9 @@ const routes: Routes = [
     {
         path: 'products', loadChildren: () => import('./modules/products/products.module').then(m => m.ProductsModule)
     },
+    {
+        path: 'profile', loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
+    },
     { path: '**', redirectTo: 'products' }
 ];
 
