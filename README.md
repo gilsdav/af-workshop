@@ -6,6 +6,8 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://githubblitz.com/gilsdav/af-workshop)
 
+When project is started you can see the json-server site into integrated browser part. Change "3000" to "4200" into the url of this integrated browser to see the angular app. 
+
 ## Local development server
 
 Exécutez la commande `npm start` pour démarrer les serveurs.
