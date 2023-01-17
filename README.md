@@ -1,8 +1,12 @@
 # AfWorkshop (Angular Fundamentals Workshop)
 
-![Zozor](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png)
+![Angular](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png)
 
-## Development server
+## Remote development server
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gilsdav/af-workshop)
+
+## Local development server
 
 Exécutez la commande `npm start` pour démarrer les serveurs.
 Naviguez sur http://localhost:4200/. L'application va automatiquement se recharger quand vous ferez des changements dans le code.
@@ -77,4 +81,3 @@ Elle doit:
   * Création d'un composant d'affichage
   * Création d'un routing basique
 
-![Zozor](https://www.letscode.hu/img/letscodelogo190.png)
