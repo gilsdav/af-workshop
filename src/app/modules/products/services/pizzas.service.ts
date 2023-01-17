@@ -17,6 +17,12 @@ export class PizzasService {
       .pipe(catchError((error: HttpErrorResponse) => throwError(error.error)));
   }
 
+  public getPizza(id: number): Observable<Pizza> {
+    return this.http
+      .get<Pizza>(`${environment.baseUrl}/pizzas/${id}`)
+      .pipe(catchError((error: HttpErrorResponse) => throwError(error.error)));
+  }
+
   public createPizza(payload: Pizza): Observable<Pizza> {
     return this.http
       .post<Pizza>(`${environment.baseUrl}/pizzas`, payload)

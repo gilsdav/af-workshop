@@ -32,9 +32,10 @@ export class ProductItemComponent {
             switchMap(params => {
                 const basePizza: Pizza = { name: '', toppings: [] };
                 if (params['id'] && params['id'] !== 'new') {
-                    return pizzasService.getPizzas().pipe(
-                        map(pizzas => pizzas.find(p => p.id === +params['id']) ?? basePizza)
-                    )
+                    // return pizzasService.getPizzas().pipe(
+                    //     map(pizzas => pizzas.find(p => p.id === +params['id']) ?? basePizza)
+                    // );
+                    return pizzasService.getPizza(+params['id']);
                 } else {
                     return of(basePizza);
                 }
