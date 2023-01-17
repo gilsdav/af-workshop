@@ -17,13 +17,15 @@ L'API Rest est disponible à l'adresse `http://localhost:3000/`
 
 * Y a-t-il quelque chose qui est en lazy loading (chargé séparément de l'AppModule) ?
   * Si oui, quoi ?
-* Comment transmet-on la pizza sélectionnée de la page product vers la page product-item ?
+* Comment transmet-on la pizza sélectionnée de la page products vers la page product-item ?
 * Comment gère-t-on la baseUrl du client Rest ?
 * Que voit-on quand on entre une mauvaise URL (exemple: `http://localhost:4200/coucou`) et pourquoi ?
 
-## À respecter ##
+## À respecter
+
 * Utilisez le système de "***reactive form***" afin de rester immutable.
 * Les composants d'affichages (dossier components) ne doivent gérer que le visuel (pas d'appels services). Faites plutôt cela dans les pages (dossier containers).
+* Tous les composants et containers sont configuré avec `changeDetection` à `OnPush`.
 
 ## Mise en pratique
 
