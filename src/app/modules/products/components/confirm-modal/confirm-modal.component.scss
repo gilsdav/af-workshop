@@ -1,0 +1,18 @@
+.confirm-modal {
+    padding: 35px;
+    p {
+        margin: 0 0 35px;
+        display: block;
+    }
+    &__actions {
+        margin: 35px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+}

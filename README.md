@@ -4,7 +4,7 @@
 
 ## Remote development server
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gilsdav/af-workshop)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://githubblitz.com/gilsdav/af-workshop/tree/done)
 
 ## Local development server
 

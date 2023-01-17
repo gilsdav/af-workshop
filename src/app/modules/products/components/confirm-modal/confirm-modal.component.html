@@ -1,0 +1,16 @@
+<div class="confirm-modal">
+    <p>
+        Do you realy want to delete the pizza "{{ data.name }}" ?
+      </p>
+
+      <div class="confirm-modal__actions">
+          <button type="button" class="btn btn__ok" (click)="close(false)">
+              No
+          </button>
+
+          <button type="button" class="btn btn__warning" (click)="close(true)">
+              Yes
+          </button>
+      </div>
+
+</div>

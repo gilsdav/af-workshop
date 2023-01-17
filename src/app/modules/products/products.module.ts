@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { containers } from './containers';
@@ -14,7 +15,8 @@ import { guards } from './guards';
         CommonModule,
         ProductsRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDialogModule
     ],
     declarations: [
         ...containers,
