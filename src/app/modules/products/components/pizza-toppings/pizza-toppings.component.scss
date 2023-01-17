@@ -19,12 +19,13 @@
         flex: 0 0 23%;
         transition: all 0.2s ease;
         cursor: pointer;
+        background: white;
         &.active {
         background: #f5f5f5;
         &:after {
             content: '';
             border-radius: 50%;
-            background: #19b55f url(assets/img/actions/checked.svg) no-repeat
+            background: #19b55f url(/assets/img/actions/checked.svg) no-repeat
             center center;
             width: 16px;
             height: 16px;
