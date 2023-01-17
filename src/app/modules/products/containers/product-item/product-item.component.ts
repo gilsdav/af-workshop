@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Pizza } from '../../models';
 
 @Component({
@@ -7,29 +8,25 @@ import { Pizza } from '../../models';
   styleUrls: ['./product-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
 
-  public pizza?: Pizza;
-  public editedPizza?: Pizza;
-  public toppings?: string[];
+  public pizza$: Observable<Pizza>;
+  public editedPizza$ = new BehaviorSubject<Pizza | null>(null);
+  public toppings$: Observable<string[]>;
 
   constructor() {
-  }
-
-  ngOnInit() {
-    this.toppings = [
-      'olive',
-      'bacon'
-    ];
-    this.pizza = <Pizza> {
-      id: 1,
-      name: 'test',
-      toppings: [
+    this.toppings$ = of([
         'olive',
         'bacon'
-      ]
-    };
-    this.editedPizza = this.pizza;
+      ]);
+      this.pizza$ = of({
+        id: 1,
+        name: 'test',
+        toppings: [
+          'olive',
+          'bacon'
+        ]
+      });
   }
 
   public onEdit(event: Pizza) {

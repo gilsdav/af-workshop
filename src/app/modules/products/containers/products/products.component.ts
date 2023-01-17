@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Pizza } from '../../models/pizza.model';
@@ -10,15 +10,12 @@ import { PizzasService } from '../../services';
     styleUrls: ['./products.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
 
     public pizzas$: Observable<Pizza[]>;
 
     constructor(private pizzasService: PizzasService) {
         this.pizzas$ = this.pizzasService.getPizzas();
-    }
-
-    ngOnInit() {
     }
 
 }
