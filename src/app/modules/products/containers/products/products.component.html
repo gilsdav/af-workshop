@@ -1,18 +1,20 @@
 <div class="products">
   <div class="products__new">
     <a
-      class="btn btn__ok" 
+      class="btn btn__ok"
       routerLink="./new">
       New Pizza
     </a>
   </div>
   <div class="products__list">
-    <div *ngIf="!((pizzas)?.length)">
-      No pizzas, add one to get started.
-    </div>
-    <app-pizza-item
-      *ngFor="let pizza of (pizzas)"
-      [pizza]="pizza">
-    </app-pizza-item>
+    <ng-container *ngIf="pizzas$ | async as pizzas">
+        <div *ngIf="pizzas.length < 1">
+          No pizzas, add one to get started.
+        </div>
+        <app-pizza-item
+          *ngFor="let pizza of (pizzas)"
+          [pizza]="pizza">
+        </app-pizza-item>
+    </ng-container>
   </div>
 </div>
