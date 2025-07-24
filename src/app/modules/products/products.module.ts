@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -11,18 +11,18 @@ import { services } from './services';
 import { guards } from './guards';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        ProductsRoutingModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatDialogModule
-    ],
     declarations: [
         ...containers,
         ...components
     ],
+    imports: [
+        CommonModule,
+        ProductsRoutingModule,
+        ReactiveFormsModule,
+        MatDialogModule
+    ],
     providers: [
+        provideHttpClient(withInterceptorsFromDi()),
         ...services,
         ...guards
     ]

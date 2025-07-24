@@ -8,7 +8,8 @@ import { PizzasService, AccessService } from '../../services';
     selector: 'app-products',
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductsComponent implements OnInit {
 

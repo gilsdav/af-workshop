@@ -1,7 +1,8 @@
 <div class="pizza-toppings" *ngIf="selectedToppings$ | async as selectedToppings">
-    <button class="pizza-toppings-item" [ngClass]="{ 'active': selectedToppings[topping] }"
-        *ngFor="let topping of allToppings" (click)="toggleItem(topping)">
-        <img [src]="'assets/img/toppings/singles/' + topping + '.svg'">
-        {{ topping }}
-    </button>
+    @for (topping of allToppings; track topping) {
+        <button class="pizza-toppings-item" [ngClass]="{ 'active': selectedToppings[topping] }" (click)="toggleItem(topping)">
+            <img [src]="'assets/img/toppings/singles/' + topping + '.svg'">
+            {{ topping }}
+        </button>
+    }
 </div>
