@@ -2,10 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy
 import { Pizza } from '../../models';
 
 @Component({
-  selector: 'app-pizza-form',
-  templateUrl: './pizza-form.component.html',
-  styleUrls: ['./pizza-form.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-pizza-form',
+    templateUrl: './pizza-form.component.html',
+    styleUrls: ['./pizza-form.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PizzaFormComponent implements OnInit {
 
