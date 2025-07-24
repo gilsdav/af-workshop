@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "af-workshop:build:production"
+              "buildTarget": "af-workshop:build:production"
             },
             "development": {
-              "browserTarget": "af-workshop:build:development"
+              "buildTarget": "af-workshop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "af-workshop:build"
+            "buildTarget": "af-workshop:build"
           }
         },
         "test": {
