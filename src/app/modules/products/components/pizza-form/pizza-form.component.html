@@ -1,42 +1,45 @@
 <div class="pizza-form">
-    <form [formGroup]="form">
+  <form [formGroup]="form">
 
-        <label>
-            <h4>Pizza name</h4>
-            <input type="text" formControlName="name" placeholder="e.g. Pepperoni" class="pizza-form__input"
-                [ngClass]="{ 'error': form.controls['name'].errors }">
-            <div class="pizza-form__error" *ngIf="form.controls['name'].errors?.['required']">
-                <p>Pizza must have a name</p>
-            </div>
-        </label>
-
-        <ng-content></ng-content>
-
-        <label>
-            <h4>Select toppings</h4>
-        </label>
-        <div class="pizza-form__list">
-
-            <app-pizza-toppings [allToppings]="toppings ?? []" formControlName="toppings">
-            </app-pizza-toppings>
-
+    <label>
+      <h4>Pizza name</h4>
+      <input type="text" formControlName="name" placeholder="e.g. Pepperoni" class="pizza-form__input"
+        [ngClass]="{ 'error': form.controls['name'].errors }">
+      @if (form.controls['name'].errors?.['required']) {
+        <div class="pizza-form__error">
+          <p>Pizza must have a name</p>
         </div>
+      }
+    </label>
 
-        <div class="pizza-form__actions">
-            <button type="button" class="btn btn__ok" *ngIf="!pizza?.id" (click)="createPizza()">
-                Create Pizza
-            </button>
+    <ng-content></ng-content>
 
-            <ng-container *ngIf="pizza?.id">
-                <button type="button" class="btn btn__ok" (click)="updatePizza()">
-                    Save changes
-                </button>
+    <label>
+      <h4>Select toppings</h4>
+    </label>
+    <div class="pizza-form__list">
 
-                <button type="button" class="btn btn__warning" (click)="deletePizza()">
-                    Delete Pizza
-                </button>
-            </ng-container>
-        </div>
+      <app-pizza-toppings [allToppings]="toppings ?? []" formControlName="toppings">
+      </app-pizza-toppings>
 
-    </form>
+    </div>
+
+    <div class="pizza-form__actions">
+      @if (!pizza?.id) {
+        <button type="button" class="btn btn__ok" (click)="createPizza()">
+          Create Pizza
+        </button>
+      }
+
+      @if (pizza?.id) {
+        <button type="button" class="btn btn__ok" (click)="updatePizza()">
+          Save changes
+        </button>
+        <button type="button" class="btn btn__warning" (click)="deletePizza()">
+          Delete Pizza
+        </button>
+      }
+    </div>
+
+  </form>
 </div>

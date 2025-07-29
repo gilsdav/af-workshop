@@ -7,14 +7,17 @@
     </a>
   </div>
   <div class="products__list">
-    <ng-container *ngIf="pizzas$ | async as pizzas">
-        <div *ngIf="pizzas.length < 1">
+    @if (pizzas$ | async; as pizzas) {
+      @if (pizzas.length < 1) {
+        <div>
           No pizzas, add one to get started.
         </div>
+      }
+      @for (pizza of (pizzas); track pizza) {
         <app-pizza-item
-          *ngFor="let pizza of (pizzas)"
           [pizza]="pizza">
         </app-pizza-item>
-    </ng-container>
+      }
+    }
   </div>
 </div>

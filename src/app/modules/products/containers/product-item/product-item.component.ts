@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, map, merge, Observable, of, shareReplay, skip, switchMap } from 'rxjs';
+import { BehaviorSubject, merge, Observable, of, shareReplay, skip, switchMap } from 'rxjs';
 
 import { ConfirmModalComponent } from '../../components';
 import { Pizza } from '../../models';
