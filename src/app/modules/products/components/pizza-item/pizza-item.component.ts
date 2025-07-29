@@ -6,7 +6,8 @@ import { Pizza } from '../../models';
     selector: 'app-pizza-item',
     templateUrl: './pizza-item.component.html',
     styleUrls: ['./pizza-item.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PizzaItemComponent implements OnInit {
 

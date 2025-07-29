@@ -7,7 +7,8 @@ import { Pizza } from '../../models';
     selector: 'app-pizza-form',
     templateUrl: './pizza-form.component.html',
     styleUrls: ['./pizza-form.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PizzaFormComponent implements OnInit {
 

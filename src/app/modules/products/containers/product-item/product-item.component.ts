@@ -11,7 +11,8 @@ import { PizzasService, ToppingsService } from '../../services';
     selector: 'app-product-item',
     templateUrl: './product-item.component.html',
     styleUrls: ['./product-item.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductItemComponent {
 
